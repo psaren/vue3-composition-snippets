@@ -1,0 +1,44 @@
+{
+    "name": "vue3-composition-snippets",
+    "displayName": "Vue3 Composition Snippets",
+    "description": "A lot of vue3 / vuex /vue-router composition snippets make your life easy!",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github/psaren/vue3-composition-snippets"
+    },
+    "bugs": {
+        "url": "https://github/psaren/vue3-composition-snippets/issues",
+        "email": "smalltree@outlook.com"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "vue",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

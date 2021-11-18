@@ -1,0 +1,329 @@
+{
+  "import Vue": {
+    "prefix": "imv",
+    "body": ["import Vue from 'vue'"]
+  },
+  "import/named Vue": {
+    "prefix": "imnv",
+    "body": ["import { $1 } from 'vue'"]
+  },
+  "import VueRouter": {
+    "prefix": "imvr",
+    "body": ["import VueRouter from 'vue-router'"]
+  },
+  "import Vuex": {
+    "prefix": "imvx",
+    "body": ["import { Store } from 'vuex'"]
+  },
+  "vueOptionsApiComponent": {
+    "prefix": "voc",
+    "body": [
+      "export default {",
+      "\tname: '$1',",
+      "\tprops: {},",
+      "\tdata() {",
+      "\t\treturn {}",
+      "\t},",
+      "\tmethods: {}",
+      "}",
+    ],
+    "description": "Create a vue options api component"
+  },
+  "vueCompositionApiComponent": {
+    "prefix": "vcc",
+    "body": [
+      "import { defineComponent } from 'vue'",
+      "",
+      "const $1 = defineComponent({",
+        "\tname: '$1',",
+        "\tprops: {",
+        "\t\t$2",
+        "\t},",
+        "\tsetup(props) {",
+        "\t\t$3",
+        "\t}",
+      "})",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "Create a vue composition api component"
+  },
+  "vueCompositionApiAsyncComponent": {
+    "prefix": "vcac",
+    "body": [
+      "import { defineAsyncComponent } from 'vue'",
+      "",
+      "export default defineAsyncComponent({",
+      "\t// The factory function",
+      "\tloader: () => import('./Foo.vue'),",
+      "\t// A component to use while the async component is loading",
+      "\tloadingComponent: LoadingComponent,",
+      "\t// A component to use if the load fails",
+      "\terrorComponent: ErrorComponent,",
+      "\t// Delay before showing the loading component. Default: 200ms.",
+      "\tdelay: 200,",
+      "\t// The error component will be displayed if a timeout is",
+      "\t// provided and exceeded. Default: Infinity.",
+      "\ttimeout: 3000,",
+      "\t// Defining if component is suspensible. Default: true.",
+      "\tsuspensible: false,",
+      "\t/**",
+      "\t *",
+      "\t * @param {*} error Error message object",
+      "\t * @param {*} retry A function that indicating whether the async component should retry when the loader promise rejects",
+      "\t * @param {*} fail\tEnd of failure",
+      "\t * @param {*} attempts Maximum allowed retries number",
+      "\t */",
+      "\tonError(error, retry, fail, attempts) {",
+      "\t\tif (error.message.match(/fetch/) && attempts <= 3) {",
+      "\t\t\t// retry on fetch errors, 3 max attempts",
+      "\t\t\tretry()",
+      "\t\t} else {",
+      "\t\t\t// Note that retry/fail are like resolve/reject of a promise:",
+      "\t\t\t// one of them must be called for the error handling to continue.",
+      "\t\t\tfail()",
+      "\t\t}",
+      "\t},",
+      "})"
+    ],
+    "description": "Create a vue composition api async component"
+  },
+  "computed": {
+    "prefix": "computed",
+    "body": ["const $1 = computed(() => $2)$0"],
+    "description": "Define a computed property"
+  },
+  "computedGetter": {
+    "prefix": ["computed", "computedGet"],
+    "body": [
+      "const $1 = computed({",
+      "\tget: () => $2",
+      "\tset: val => {",
+      "\t\t$3",
+      "\t}",
+      "})"
+    ],
+    "description": "Define a computed property with getter and setter"
+  },
+  "watch": {
+    "prefix": "watch",
+    "body": [
+      "watch(() => $1, () => {",
+      "\t$2",
+      "})"
+    ],
+    "description": "Create a watcher"
+  },
+  "watchi": {
+    "prefix": "watchi",
+    "body": [
+      "watch(() => $1, () => {",
+      "\t$2",
+      "}, {",
+      "\timmediate: true",
+      "})",
+    ],
+    "description": "Create a watcher with immediate"
+  },
+  "props": {
+    "prefix": "prop",
+    "body": [
+      "{",
+      "\ttype: $2,",
+      "\tdefault: $3",
+      "}",
+    ],
+    "description": "Create a props"
+  },
+  "props-String": {
+    "prefix": "propString",
+    "body": [
+      "{",
+      "\ttype: String,",
+      "\tdefault: ''",
+      "}",
+    ],
+    "description": "Create a String props"
+  },
+  "props-Boolean": {
+    "prefix": "propBoolean",
+    "body": [
+      "{",
+      "\ttype: Boolean,",
+      "\tdefault: false",
+      "}",
+    ],
+    "description": "Create a Boolean props"
+  },
+  "props-Number": {
+    "prefix": "propNumber",
+    "body": [
+      "{",
+      "\ttype: Number,",
+      "\tdefault: $2",
+      "}",
+    ],
+    "description": "Create a Number props"
+  },
+  "props-Function": {
+    "prefix": "propFunction",
+    "body": [
+      "{",
+      "\ttype: Function,",
+      "\tdefault: $2",
+      "}",
+    ],
+    "description": "Create a Function props"
+  },
+  "props-Array": {
+    "prefix": "propArray",
+    "body": [
+      "{",
+      "\ttype: Array,",
+      "\tdefault: () => []",
+      "}",
+    ],
+    "description": "Create a Array props"
+  },
+  "props-Object": {
+    "prefix": "propObject",
+    "body": [
+      "{",
+      "\ttype: Object,",
+      "\tdefault: () => ({})",
+      "}",
+    ],
+    "description": "Create a Object props"
+  },
+  "reactive": {
+    "prefix": "reactive",
+    "body": ["const ${1:state} = reactive({$2})"],
+    "description": "Define a reactive object"
+  },
+  "inject": {
+    "prefix": "inject",
+    "body": ["const $1 = inject('$2', $3)"],
+    "description": "Define a inject property"
+  },
+  "provide": {
+    "prefix": "provide",
+    "body": ["provide('$1', $2)"],
+    "description": "Vue Provide method"
+  },
+  "onMounted": {
+    "prefix": ["om", "onMounted"],
+    "body": ["onMounted(() => {$1})"],
+    "description": "Vue onMounted lifecycle"
+  },
+  "onBeforeMounted": {
+    "prefix": ["obm", "onBeforeMounted"],
+    "body": ["onBeforeMounted(() => {$1})"],
+    "description": "Vue onBeforeMounted lifecycle"
+  },
+  "onBeforeUpdate": {
+    "prefix": ["obu", "onBeforeUpdate"],
+    "body": ["onBeforeUpdate(() => {$1})"],
+    "description": "Vue onBeforeUpdate lifecycle"
+  },
+  "onUpdated": {
+    "prefix": ["ou", "onUpdated"],
+    "body": ["onUpdated(() => {$1})"],
+    "description": "Vue onUpdated lifecycle"
+  },
+  "onBeforeUnmount": {
+    "prefix": ["obum", "onBeforeUnmount"],
+    "body": ["onBeforeUnmount(() => {$1})"],
+    "description": "Vue onBeforeUnmount lifecycle"
+  },
+  "onUnmounted": {
+    "prefix": ["oum", "onUnmounted"],
+    "body": ["onUnmounted(() => {$1})"],
+    "description": "Vue onUnmounted lifecycle"
+  },
+  "onErrorCaptured": {
+    "prefix": ["oec", "onErrorCaptured"],
+    "body": ["onErrorCaptured(() => {$1})"],
+    "description": "Vue onErrorCaptured lifecycle"
+  },
+  "onRenderTriggered": {
+    "prefix": ["ort", "onRenderTriggered"],
+    "body": ["onRenderTriggered(() => {$1})"],
+    "description": "Vue onRenderTriggered lifecycle"
+  },
+  "onActivated": {
+    "prefix": ["oa", "onActivated"],
+    "body": ["onActivated(() => {$1})"],
+    "description": "Vue onActivated lifecycle"
+  },
+  "onDeactivated": {
+    "prefix": ["od", "onDeactivated"],
+    "body": ["onDeactivated(() => {$1})"],
+    "description": "Vue onDeactivated lifecycle"
+  },
+  "watchEffect": {
+    "prefix": ["we", "watchEffect"],
+    "body": ["watchEffect(() => {$1})"],
+    "description": "Create a watchEffect watcher"
+  },
+  "watchPostEffect": {
+    "prefix": ["wpe", "watchPostEffect"],
+    "body": ["watchPostEffect(() => {$1})"],
+    "description": "Create a watchPostEffect watcher"
+  },
+  "watchSyncEffect": {
+    "prefix": ["wse", "watchSyncEffect"],
+    "body": ["watchSyncEffect(() => {$1})"],
+    "description": "Create a watchSyncEffect watcher"
+  },
+  "useStore": {
+    "prefix": ["us", "useStore"],
+    "body": "const ${1:store} = useStore()",
+    "description": "Use store"
+  },
+  "storeCommit": {
+    "prefix": ["sc", "storeCommit"],
+    "body": "store.commit($1)",
+    "description": "store commit"
+  },
+  "storeState": {
+    "prefix": ["sc", "storeState"],
+    "body": "store.state.$1",
+    "description": "store State"
+  },
+  "storeGetters": {
+    "prefix": ["sc", "storeGetters"],
+    "body": "store.getters.$1",
+    "description": "store Getters"
+  },
+  "storeDispatch": {
+    "prefix": ["sd", "storeDispatch"],
+    "body": "store.dispatch($1)",
+    "description": "store dispatch"
+  },
+  "useRouter": {
+    "prefix": ["useRouter"],
+    "body": "const ${1:router} = useRouter()",
+    "description": "Use router"
+  },
+  "useRoute": {
+    "prefix": ["useRoute"],
+    "body": "const ${1:route} = useRoute()",
+    "description": "Use route"
+  },
+  "useLink": {
+    "prefix": ["useLink"],
+    "body": "const { $1 } = useLink()",
+    "description": "UseLink"
+  },
+  "routerReplace": {
+    "prefix": ["rr", "routerReplace"],
+    "body": "router.replace",
+    "description": "Router replace"
+  },
+  "routerPush": {
+    "prefix": ["rp", "routerPush"],
+    "body": "router.push",
+    "description": "Router push"
+  },
+}
