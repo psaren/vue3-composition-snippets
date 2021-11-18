@@ -5,7 +5,7 @@
     "publisher": "psaren",
     "icon": "images/logo.png",
     "description": "A lot of vue3 / vuex /vue-router composition snippets make your life easy!",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.61.0"
     },
