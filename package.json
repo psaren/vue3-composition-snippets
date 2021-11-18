@@ -1,6 +1,8 @@
 {
     "name": "vue3-composition-snippets",
     "displayName": "Vue3 Composition Snippets",
+    "author": "psaren",
+    "publisher": "psaren",
     "description": "A lot of vue3 / vuex /vue-router composition snippets make your life easy!",
     "version": "0.0.1",
     "engines": {
