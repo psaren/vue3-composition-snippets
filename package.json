@@ -11,10 +11,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github/psaren/vue3-composition-snippets"
+        "url": "https://github.com/psaren/vue3-composition-snippets"
     },
     "bugs": {
-        "url": "https://github/psaren/vue3-composition-snippets/issues",
+        "url": "https://github.com/psaren/vue3-composition-snippets/issues",
         "email": "smalltree@outlook.com"
     },
     "contributes": {
