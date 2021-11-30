@@ -1,4 +1,5 @@
 # vue3-composition-snippets 
+[install in visualstudio marketplace](https://marketplace.visualstudio.com/items?itemName=psaren.vue3-composition-snippets)
 
 ## Features
 This snippets extension is contains a lot of vue3 / vuex /vue-router composition api shortscuts
